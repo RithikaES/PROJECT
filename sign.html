@@ -18,8 +18,8 @@
               type="email"
               id="email"
               name="email"
-              placeholder="Enter your email"
               required
+              placeholder="Enter your email id"
             />
           </div>
           <div class="input-group">
@@ -28,18 +28,36 @@
               type="password"
               id="password"
               name="password"
-              placeholder="Enter your password"
               required
+              placeholder="Enter your password"
             />
+            <span
+              class="toggle-password"
+              onclick="togglePassword('password', this)"
+              >Show</span
+            >
           </div>
           <div class="input-group">
             <button type="submit">Sign In</button>
           </div>
         </form>
-        <p class="register-text">
-          Don't have an account? <a href="#">Register here</a>
-        </p>
+        <p class="register-text">Don't have an account?</p>
+        <a href="signUp.html">Register here</a>
       </div>
     </div>
   </body>
+  <script>
+    function togglePassword(fieldId, toggleButton) {
+      const passwordField = document.getElementById(fieldId);
+      if (passwordField.type === "password") {
+        passwordField.type = "text";
+        toggleButton.textContent = "Hide";
+      } else {
+        passwordField.type = "password";
+        toggleButton.textContent = "Show";
+      }
+    }
+  </script>
+  >
 </html>
+
